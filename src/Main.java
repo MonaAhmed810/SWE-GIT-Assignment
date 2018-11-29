@@ -128,7 +128,7 @@ public class Main {
         }
         System.out.println();
     }
-    public static void FindUnique() {
+public static void FindUnique() {
         if (isChar) {
             for (int i = 0; i < size; i++) {
                 boolean isUnique = true;
@@ -159,6 +159,7 @@ public class Main {
             }
         }
     }
+    
   public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (true) {
