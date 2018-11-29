@@ -10,3 +10,5 @@
 
 
 5- Please pull from master branch only.
+
+6- Make sure you pull from master branch before you push to your branch.
