@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import static java.util.Collections.sort;
+import java.util.Vector;
 public class Main {
 
     private static int[] intArr;
@@ -128,6 +130,38 @@ public class Main {
         }
         System.out.println();
     }
+    public static void largest_prime(){
+        if(isChar){
+            System.out.println("no prime num ");
+            return;
+        }
+        Vector<Integer> vect = new Vector();
+        for(int i=0;i<intArr.length;i++)
+        {
+         int temp=intArr[i];
+         boolean flage=true;
+         if(temp==1)
+             continue;
+         if(temp==2)
+         {    vect.add(temp);
+              continue; }
+           for(int j=2;j<temp;j++)
+           {   
+               if(temp%j==0)
+               {      flage=false;  }
+           }
+           if(flage){
+           vect.add(temp);
+           }
+        }
+       sort(vect);
+              if(vec.vect.size()==0){
+      System.out.println("no prim /n");
+                  return;
+              }
+        System.out.println("the largest prime num "+vect.get(vect.size()-1));
+
+}
   public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (true) {
