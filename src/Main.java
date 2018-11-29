@@ -154,6 +154,38 @@ public class Main {
 
             System.out.println(intArr[j]);}} }
 
+public static void FindUnique() {
+        if (isChar) {
+            for (int i = 0; i < size; i++) {
+                boolean isUnique = true;
+                for (int j = 0; j < i; j++) {
+                    if (charArr[i] == charArr[j]) {
+                        isUnique = false;
+                        break;
+                    }
+
+                }
+                if (isUnique) {
+                    System.out.print(charArr[i] + " ");
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                boolean isUnique = true;
+                for (int j = 0; j < i; j++) {
+                    if (intArr[i] == intArr[j]) {
+                        isUnique = false;
+                        break;
+                    }
+
+                }
+                if (isUnique) {
+                    System.out.print(intArr[i] + " ");
+                }
+            }
+        }
+    }
+    
   public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (true) {
@@ -189,6 +221,9 @@ public class Main {
                     case 9:
                         reverse();
                         break;
+                    case 11:
+                        FindUnique();
+                        break;
             	   case 12:
                 	Maximum3Numbers();
                 	break;
@@ -200,6 +235,8 @@ public class Main {
                         break;
                     case 18: // Execute All
                         smallestPrime();//5
+                        reverse();//9
+                        FindUnique();//11
                         Maximum3Numbers();//12
                         getMin3Numbers();//13
                         returnPrime();//16
