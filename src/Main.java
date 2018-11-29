@@ -1,8 +1,8 @@
 import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 import static java.util.Collections.sort;
 import java.util.Vector;
+import java.util.Scanner;
 public class Main {
 
     private static int[] intArr;
