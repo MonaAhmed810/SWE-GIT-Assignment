@@ -80,7 +80,7 @@ public class Main {
             Arrays.sort(charArr);
             System.out.println("Maximum 3 characters are: ");
             for(int i=size-1;i>size-4&& i >=0;i--)
-                System.out.print(charArr[i]+" "); 
+                System.out.print(charArr[i]+" ");
             System.out.println();
         }
         else
@@ -162,6 +162,64 @@ public class Main {
         System.out.println("the largest prime num "+vect.get(vect.size()-1));
 
 }
+    public static void reverse()
+    {
+       if(isChar)
+       {
+           char temp;
+    for(int i = 0; i < charArr.length/2; i++)
+{
+    temp =charArr[i];
+    charArr[i] =charArr[charArr.length - i - 1];
+    charArr[charArr.length- i - 1] = temp;}
+      System.out.println("the out put is");
+        for(int j=0;j<charArr.length;j++){
+
+            System.out.println(charArr[j]);}}
+       else
+       {     int temp;
+    for(int i = 0; i < intArr.length/2; i++)
+{
+    temp =intArr[i];
+    intArr[i] =intArr[intArr.length - i - 1];
+    intArr[intArr.length- i - 1] = temp;}
+      System.out.println("the out put is");
+        for(int j=0;j<intArr.length;j++){
+
+            System.out.println(intArr[j]);}} }
+
+public static void FindUnique() {
+        if (isChar) {
+            for (int i = 0; i < size; i++) {
+                boolean isUnique = true;
+                for (int j = 0; j < i; j++) {
+                    if (charArr[i] == charArr[j]) {
+                        isUnique = false;
+                        break;
+                    }
+
+                }
+                if (isUnique) {
+                    System.out.print(charArr[i] + " ");
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                boolean isUnique = true;
+                for (int j = 0; j < i; j++) {
+                    if (intArr[i] == intArr[j]) {
+                        isUnique = false;
+                        break;
+                    }
+
+                }
+                if (isUnique) {
+                    System.out.print(intArr[i] + " ");
+                }
+            }
+        }
+    }
+    
   public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (true) {
@@ -194,6 +252,12 @@ public class Main {
                     case 5:
                         smallestPrime();
                         break;
+                    case 9:
+                        reverse();
+                        break;
+                    case 11:
+                        FindUnique();
+                        break;
             	   case 12:
                 	Maximum3Numbers();
                 	break;
@@ -202,9 +266,11 @@ public class Main {
                         break;
                     case 16:
                         returnPrime();
-                        break;    
+                        break;
                     case 18: // Execute All
                         smallestPrime();//5
+                        reverse();//9
+                        FindUnique();//11
                         Maximum3Numbers();//12
                         getMin3Numbers();//13
                         returnPrime();//16
