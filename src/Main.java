@@ -138,7 +138,7 @@ public class Main {
     temp =charArr[i];
     charArr[i] =charArr[charArr.length - i - 1];
     charArr[charArr.length- i - 1] = temp;}
-      System.out.println("the out put is");
+      System.out.println("the reverse array is");
         for(int j=0;j<charArr.length;j++){
 
             System.out.println(charArr[j]);}}
@@ -149,7 +149,7 @@ public class Main {
     temp =intArr[i];
     intArr[i] =intArr[intArr.length - i - 1];
     intArr[intArr.length- i - 1] = temp;}
-      System.out.println("the out put is");
+      System.out.println("the reverse array is");
         for(int j=0;j<intArr.length;j++){
 
             System.out.println(intArr[j]);}} }
