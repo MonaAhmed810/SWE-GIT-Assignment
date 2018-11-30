@@ -154,6 +154,58 @@ public class Main {
 
             System.out.println(intArr[j]);}} }
 
+public static void FindUnique() {
+        if (isChar) {
+            for (int i = 0; i < size; i++) {
+                boolean isUnique = true;
+                for (int j = 0; j < i; j++) {
+                    if (charArr[i] == charArr[j]) {
+                        isUnique = false;
+                        break;
+                    }
+
+                }
+                if (isUnique) {
+                    System.out.print(charArr[i] + " ");
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                boolean isUnique = true;
+                for (int j = 0; j < i; j++) {
+                    if (intArr[i] == intArr[j]) {
+                        isUnique = false;
+                        break;
+                    }
+
+                }
+                if (isUnique) {
+                    System.out.print(intArr[i] + " ");
+                }
+            }
+        }
+    }
+    public static void zeroIfLessThanZero(){
+        int arr[]=new int[size];
+        if (isChar)
+        {
+            for (int i=0;i<size;i++)
+                arr[i]=charArr[i]-'0';
+        }
+        else
+        {
+            for (int i=0;i<size;i++)
+                arr[i]=intArr[i];
+        }
+        System.out.print("Zero if less than zero : { ");
+        for(int i=0; i<arr.length ; i++){
+            if(arr[i] < 0){
+                arr[i] = 0;
+            }
+            System.out.print(arr[i]+ " ");
+        }
+        System.out.println("}");
+    }
   public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (true) {
@@ -189,6 +241,9 @@ public class Main {
                     case 9:
                         reverse();
                         break;
+                    case 11:
+                        FindUnique();
+                        break;
             	   case 12:
                 	Maximum3Numbers();
                 	break;
@@ -198,11 +253,17 @@ public class Main {
                     case 16:
                         returnPrime();
                         break;
+                    case 17:
+                        zeroIfLessThanZero();
+                        break;
                     case 18: // Execute All
                         smallestPrime();//5
+                        reverse();//9
+                        FindUnique();//11
                         Maximum3Numbers();//12
                         getMin3Numbers();//13
                         returnPrime();//16
+                        zeroIfLessThanZero(); //17
                         break;
                 }
             }catch (InputMismatchException e)
