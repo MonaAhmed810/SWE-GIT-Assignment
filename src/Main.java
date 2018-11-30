@@ -370,6 +370,9 @@ public class Main {
                 case 1:
                 	Most_repeated_value();
                 	break;
+                        case 4:
+                	largest_prime();
+                	break;
                     case 5:
                         smallestPrime();
                         break;
