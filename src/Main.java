@@ -396,6 +396,7 @@ public class Main {
                         break;
                     case 18: // Execute All
                     	Most_repeated_value();//1
+                        largest_prime();//4
                         smallestPrime();//5
                         reverse();//9
                         FindUnique();//11
@@ -403,7 +404,7 @@ public class Main {
                         getMin3Numbers();//13
                         returnPrime();//16
                         zeroIfLessThanZero(); //17
-                        largest_prime();//4
+                        
                         break;
                 }
             } catch (InputMismatchException e) {
