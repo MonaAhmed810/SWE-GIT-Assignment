@@ -1,8 +1,8 @@
 import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 import static java.util.Collections.sort;
 import java.util.Vector;
+import java.util.Scanner;
 public class Main {
 
     private static int[] intArr;
@@ -154,8 +154,69 @@ public class Main {
         }
     }
 
+    public static void largest_prime(){
+        if(isChar){
+            System.out.println("no prime num ");
+            return;
+        }
+        Vector<Integer> vect = new Vector();
+        for(int i=0;i<intArr.length;i++)
+        {
+         int temp=intArr[i];
+         boolean flage=true;
+         if(temp==1)
+             continue;
+         if(temp==2)
+         {    vect.add(temp);
+              continue; }
+           for(int j=2;j<temp;j++)
+           {   
+               if(temp%j==0)
+               {      flage=false;  }
+           }
+           if(flage){
+           vect.add(temp);
+           }
+        }
+       sort(vect);
+              if(vec.vect.size()==0){
+      System.out.println("no prim /n");
+                  return;
+              }
+        System.out.println("the largest prime num "+vect.get(vect.size()-1));
+
+}
+    public static void reverse()
+    {
+       if(isChar)
+       {
+           char temp;
+    for(int i = 0; i < charArr.length/2; i++)
+{
+    temp =charArr[i];
+    charArr[i] =charArr[charArr.length - i - 1];
+    charArr[charArr.length- i - 1] = temp;}
+      System.out.println("the out put is");
+        for(int j=0;j<charArr.length;j++){
+
+            System.out.println(charArr[j]);}}
+       else
+       {     int temp;
+    for(int i = 0; i < intArr.length/2; i++)
+{
+    temp =intArr[i];
+    intArr[i] =intArr[intArr.length - i - 1];
+    intArr[intArr.length- i - 1] = temp;}
+      System.out.println("the out put is");
+        for(int j=0;j<intArr.length;j++){
+
+            System.out.println(intArr[j]);}} }
+
+
+
     public static void FindUnique() {
         System.out.print("Find Unique : ");
+
         if (isChar) {
             for (int i = 0; i < size; i++) {
                 boolean isUnique = true;
@@ -391,6 +452,7 @@ public class Main {
                         Get_average();//14
                         returnPrime();//16
                         zeroIfLessThanZero(); //17
+                        
                         break;
                 }
             } catch (InputMismatchException e) {
