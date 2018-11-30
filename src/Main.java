@@ -273,6 +273,20 @@ public class Main {
         System.out.println("}");
     }
 
+    private static void Get_average() {
+        if (isChar) {
+            System.out.println("Average : Can't Count Average for character Array");
+        } else {
+            double Sum = 0;
+            double Avg;
+            for (int i = 0; i < size; i++) {
+                Sum += intArr[i];
+            }
+            Avg = Sum / size;
+            System.out.println("Average : " + Avg);
+        }
+    }
+    
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (true) {
@@ -322,6 +336,9 @@ public class Main {
                     case 13:
                         getMin3Numbers();
                         break;
+                    case 14:
+                        Get_average();
+                        break;
                     case 16:
                         returnPrime();
                         break;
@@ -335,6 +352,7 @@ public class Main {
                         FindUnique();//11
                         Maximum3Numbers();//12
                         getMin3Numbers();//13
+                        Get_average();//14
                         returnPrime();//16
                         zeroIfLessThanZero(); //17
                         break;
