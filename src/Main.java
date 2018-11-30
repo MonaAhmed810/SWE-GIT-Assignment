@@ -179,7 +179,7 @@ public class Main {
            }
         }
        sort(vect);
-              if(vec.vect.size()==0){
+              if(vect.size()==0){
       System.out.println("no prim /n");
                   return;
               }
