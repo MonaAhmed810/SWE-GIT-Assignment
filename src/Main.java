@@ -400,6 +400,7 @@ public class Main {
                         getMin3Numbers();//13
                         returnPrime();//16
                         zeroIfLessThanZero(); //17
+                        largest_prime();//4
                         break;
                 }
             } catch (InputMismatchException e) {
