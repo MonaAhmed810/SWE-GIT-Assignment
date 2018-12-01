@@ -529,6 +529,9 @@ public class Main {
 		                    case 9:
 		                        reverse();
 		                        break;
+				    case 10:
+		                    	ShiftArr();
+		                    	break;
 		                    case 11:
 		                        FindUnique();
 		                        break;
@@ -551,10 +554,7 @@ public class Main {
 		                    	Most_repeated_value();//1
 		                        largest_prime();//4
 		                        smallestPrime();//5
-		                    	ShiftArr(); // 10
-		                    case 10:
-		                    	ShiftArr();
-		                    	break;
+
 		                        
 		                        
 		                        if (check_sort()) 
@@ -568,6 +568,8 @@ public class Main {
 		                        
 		                        
 		                        reverse();//9
+					ShiftArr(); // 10
+
 		                        FindUnique();//11
 		                        Maximum3Numbers();//12
 		                        getMin3Numbers();//13
