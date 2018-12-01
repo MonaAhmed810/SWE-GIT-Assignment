@@ -32,56 +32,46 @@ public class Main {
         System.out.println("19-\tExit");
         System.out.println("\t************************\t");
     }
-    
-    private static void Most_repeated_value()
-    {
-	
-    	if(isChar)
-    	{
-    		int count = 1, tempCount;
-  		  char value = charArr[0];
-  		  char temp = 0;
-  		  for (int i = 0; i < (charArr.length - 1); i++)
-  		  {
-  		    temp = charArr[i];
-  		    tempCount = 0;
-  		    for (int j = 1; j < charArr.length; j++)
-  		    {
-  		      if (temp == charArr[j])
-  		        tempCount++;
-  		    }
-  		    if (tempCount > count)
-  		    {
-  		      value = temp;
-  		      count = tempCount;
-  		    }
-  		  }
-  		  System.out.println("most repeated value is "+value);
-  		  System.out.println();
-    	}
-    	else {
-    		int count = 1, tempCount;
-    		  int value = charArr[0];
-    		  int temp = 0;
-    		  for (int i = 0; i < (intArr.length - 1); i++)
-    		  {
-    		    temp = intArr[i];
-    		    tempCount = 0;
-    		    for (int j = 1; j < intArr.length; j++)
-    		    {
-    		      if (temp == intArr[j])
-    		        tempCount++;
-    		    }
-    		    if (tempCount > count)
-    		    {
-    		      value = temp;
-    		      count = tempCount;
-    		    }
-    		  }
-    		  System.out.println("most repeated value is "+value);
-    		  System.out.println();}
-    		
-    	}
+
+    private static void Most_repeated_value() {
+        if (isChar) {
+            int count = 1, tempCount;
+            char value = charArr[0];
+            char temp = 0;
+            for (int i = 0; i < (charArr.length - 1); i++) {
+                temp = charArr[i];
+                tempCount = 0;
+                for (int j = 1; j < charArr.length; j++) {
+                    if (temp == charArr[j])
+                        tempCount++;
+                }
+                if (tempCount > count) {
+                    value = temp;
+                    count = tempCount;
+                }
+            }
+            System.out.println("most repeated value is " + value);
+            System.out.println();
+        } else {
+            int count = 1, tempCount;
+            int value = intArr[0];
+            int temp = 0;
+            for (int i = 0; i < (intArr.length - 1); i++) {
+                temp = intArr[i];
+                tempCount = 0;
+                for (int j = 1; j < intArr.length; j++) {
+                    if (temp == intArr[j])
+                        tempCount++;
+                }
+                if (tempCount > count) {
+                    value = temp;
+                    count = tempCount;
+                }
+            }
+            System.out.println("most repeated value is " + value);
+            System.out.println();
+        }
+    }
 
     private static int getSmallestPrime() {
         if (isChar)
@@ -304,9 +294,9 @@ public class Main {
                 }
 
                 switch (choice) {
-                case 1:
-                	Most_repeated_value();
-                	break;
+                    case 1:
+                        Most_repeated_value();
+                        break;
                     case 5:
                         smallestPrime();
                         break;
@@ -329,7 +319,7 @@ public class Main {
                         zeroIfLessThanZero();
                         break;
                     case 18: // Execute All
-                    	Most_repeated_value();//1
+                        Most_repeated_value();//1
                         smallestPrime();//5
                         reverse();//9
                         FindUnique();//11
