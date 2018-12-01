@@ -67,7 +67,7 @@ public class Main {
         }
         else {
             int count = 1, tempCount;
-            int value = charArr[0];
+            int value = intArr[0];
             int temp = 0;
             for (int i = 0; i < (intArr.length - 1); i++)
             {
