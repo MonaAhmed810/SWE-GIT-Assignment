@@ -385,12 +385,42 @@ public class Main {
 
     }
 
+	public static void ShiftArr() {
+		
+		   System.out.println("Shift Array : ");
+		   Scanner scan = new Scanner(System.in);
+		   System.out.print("Enter shift amount  : ");
+		   int A = scan.nextInt();
+		   
+		   if (isChar) {
+			   
+		for(int i = 0;i<A;++i) {
+			
+			int j ;
+			char temp =  charArr[0] ;
+			for(j = 0;j<arr.length-1;++j) charArr[i]  = charArr[i+1];
+			 charArr[i]  = temp;
+		
+		}
+		  for(int i = 0; i<charArr.length;++i)System.out.print(charArr[i] + " ");
 
-
-
-
-
-
+	}
+		   else {
+				for(int i = 0;i<A;++i) {
+					
+					int j ;
+					char temp =   intArr[0] ;
+					for(j = 0;j<arr.length-1;++j)  intArr[i]  =  intArr[i+1];
+					 intArr[i]  = temp;
+				
+				}
+				  for(int i = 0; i<intArr.length;++i)System.out.print(intArr[i] + " ");
+		   }
+		 
+		
+}
+    
+    
 
 
     public static void main(String[] args) {
@@ -454,6 +484,9 @@ public class Main {
                     case 9:
                         reverse();
                         break;
+                    case 10:
+                        ShiftArr();
+                        break;
                     case 11:
                         FindUnique();
                         break;
@@ -492,6 +525,7 @@ public class Main {
 
 
                         reverse();//9
+                        ShiftArr();//10
                         FindUnique();//11
                         Maximum3Numbers();//12
                         getMin3Numbers();//13
