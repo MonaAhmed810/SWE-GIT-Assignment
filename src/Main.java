@@ -316,7 +316,29 @@ public class Main {
         }
         System.out.println("}");
     }
-
+   static int countPrimes(int arr[]) {
+    	if (isChar) {
+            System.out.println("Primes : Can't Count primes for character Array");
+            return -1;
+        }
+    	
+    	int ret = 0;
+    	for (int i = 0; i < arr.length; ++i) {
+    		if (isPrime(arr[i]))
+    			++ret;
+    	}
+    	return ret;
+    }
+    static boolean isPrime(int n) {
+    	if (n < 2)
+    		return false;
+    	for (int i = 2; i * i <= n; ++i) {
+    		if (n % i == 0) {
+    			return false;
+    		}
+    	}
+    	return true;
+    }
     private static void Get_average() {
         if (isChar) {
             System.out.println("Average : Can't Count Average for character Array");
@@ -421,6 +443,14 @@ public class Main {
                         } else {
                             System.out.println("check sort: Array is not sorted");
                         }
+						        //
+                        break;
+                    case 8:
+                    	int c = countPrimes(intArr);
+                    	if(c != -1)
+                    		System.out.println("this array has " + c + " primes");
+                    //
+                    	break;
                     case 9:
                         reverse();
                         break;
