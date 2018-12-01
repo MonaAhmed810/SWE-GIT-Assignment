@@ -398,7 +398,7 @@ public class Main {
 			
 			int j ;
 			char temp =  charArr[0] ;
-			for(j = 0;j<arr.length-1;++j) charArr[i]  = charArr[i+1];
+			for(j = 0;j<size-1;++j) charArr[i]  = charArr[i+1];
 			 charArr[i]  = temp;
 		
 		}
@@ -409,8 +409,8 @@ public class Main {
 				for(int i = 0;i<A;++i) {
 					
 					int j ;
-					char temp =   intArr[0] ;
-					for(j = 0;j<arr.length-1;++j)  intArr[i]  =  intArr[i+1];
+					int temp = intArr[0] ;
+					for(j = 0;j<size-1;++j)  intArr[i]  =  intArr[i+1];
 					 intArr[i]  = temp;
 				
 				}
