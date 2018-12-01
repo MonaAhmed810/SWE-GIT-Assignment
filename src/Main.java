@@ -485,7 +485,10 @@ public class Main {
                             System.out.println("--------");
                         else
                             System.out.println("check sort: Array is not sorted");    // 7
-
+			//8                    	
+			int c1 = countPrimes(intArr);
+                    	if(c1 != -1)
+                    		System.out.println("this array has " + c1 + " primes");
 
 
                         reverse();//9
