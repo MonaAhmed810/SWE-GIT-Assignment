@@ -88,7 +88,23 @@ public class Main {
             System.out.println();}
 
     }
-
+static boolean check (char word [])
+    {
+    	int j=(word.length)-1;
+    	for(int i = 0;i<word.length;i++)
+    	{
+    		if(i>=j)
+    		{
+    			return true;
+    		}
+    		if(word[i]!=word[j])
+    		{
+    			return false;
+    		}
+    		j--;
+    	}
+    	return true;
+    }
     private static int getSmallestPrime() {
         if (isChar)
             return 0;
