@@ -1,12 +1,14 @@
-import java.util.Arrays;
-import java.util.InputMismatchException;
+/*
+ * @author egyptianf -> smallestPrime
+ */
+
+import java.util.*;
+
 import static java.util.Collections.sort;
-import java.util.Vector;
-import java.util.Scanner;
 
 public class Main {
-	
-	
+
+
 
     private static int[] intArr;
     private static char[] charArr;
@@ -36,63 +38,62 @@ public class Main {
         System.out.println("19-\tExit");
         System.out.println("\t************************\t");
     }
-    
+
     private static void Most_repeated_value()
     {
-	
-    	if(isChar)
-    	{
-    		int count = 1, tempCount;
-  		  char value = charArr[0];
-  		  char temp = 0;
-  		  for (int i = 0; i < (charArr.length - 1); i++)
-  		  {
-  		    temp = charArr[i];
-  		    tempCount = 0;
-  		    for (int j = 1; j < charArr.length; j++)
-  		    {
-  		      if (temp == charArr[j])
-  		        tempCount++;
-  		    }
-  		    if (tempCount > count)
-  		    {
-  		      value = temp;
-  		      count = tempCount;
-  		    }
-  		  }
-  		  System.out.println("most repeated value is "+value);
-  		  System.out.println();
-    	}
-    	else {
-    		int count = 1, tempCount;
-    		  int value = charArr[0];
-    		  int temp = 0;
-    		  for (int i = 0; i < (intArr.length - 1); i++)
-    		  {
-    		    temp = intArr[i];
-    		    tempCount = 0;
-    		    for (int j = 1; j < intArr.length; j++)
-    		    {
-    		      if (temp == intArr[j])
-    		        tempCount++;
-    		    }
-    		    if (tempCount > count)
-    		    {
-    		      value = temp;
-    		      count = tempCount;
-    		    }
-    		  }
-    		  System.out.println("most repeated value is "+value);
-    		  System.out.println();}
-    		
-    	}
+
+        if(isChar)
+        {
+            int count = 1, tempCount;
+            char value = charArr[0];
+            char temp = 0;
+            for (int i = 0; i < (charArr.length - 1); i++)
+            {
+                temp = charArr[i];
+                tempCount = 0;
+                for (int j = 1; j < charArr.length; j++)
+                {
+                    if (temp == charArr[j])
+                        tempCount++;
+                }
+                if (tempCount > count)
+                {
+                    value = temp;
+                    count = tempCount;
+                }
+            }
+            System.out.println("most repeated value is "+value);
+            System.out.println();
+        }
+        else {
+            int count = 1, tempCount;
+            int value = intArr[0];
+            int temp = 0;
+            for (int i = 0; i < (intArr.length - 1); i++)
+            {
+                temp = intArr[i];
+                tempCount = 0;
+                for (int j = 1; j < intArr.length; j++)
+                {
+                    if (temp == intArr[j])
+                        tempCount++;
+                }
+                if (tempCount > count)
+                {
+                    value = temp;
+                    count = tempCount;
+                }
+            }
+            System.out.println("most repeated value is "+value);
+            System.out.println();}
+
+    }
 
     private static int getSmallestPrime() {
         if (isChar)
             return 0;
-        int[] tmp = new int[size];
-        for (int i = 0; i < size; i++)
-            tmp[i] = intArr[i];
+        int[] tmp;
+        tmp = Arrays.copyOf(intArr, size);
         Arrays.sort(tmp);
         int length = size;
         for (int i = 0; i < length; i++) {
@@ -113,21 +114,19 @@ public class Main {
         return -1;
     }
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     public static boolean check_sort() {
         if (isChar) {
             System.out.println("Error, this Function run on integers only");
             return false;
         } else {
-            int[] tmp = new int[size];
-            for (int i = 0; i < size; i++) {
-                tmp[i] = intArr[i];
-            }
+            int[] tmp;
+            tmp = Arrays.copyOf(intArr, size);
             for (int i = 0; i < tmp.length; i++) {
                 if (i + 1 == tmp.length) {
                     return true;
@@ -153,13 +152,13 @@ public class Main {
 
             }
             return true ;}
-        }
-   
-    
-    
-    
-    
-    
+    }
+
+
+
+
+
+
     private static void smallestPrime() {
         int x = getSmallestPrime();
         if (x == 0)
@@ -172,9 +171,8 @@ public class Main {
 
     public static void reverse() {
         if (isChar) {
-            char[] tmp = new char[size];
-            for (int i = 0; i < size; i++)
-                tmp[i] = charArr[i];
+            char[] tmp;
+            tmp = Arrays.copyOf(charArr, size);
             char temp;
             for (int i = 0; i < size / 2; i++) {
                 temp = tmp[i];
@@ -187,9 +185,8 @@ public class Main {
             }
             System.out.println();
         } else {
-            int[] tmp = new int[size];
-            for (int i = 0; i < size; i++)
-                tmp[i] = intArr[i];
+            int[] tmp;
+            tmp = Arrays.copyOf(intArr, size);
             int temp;
             for (int i = 0; i < size / 2; i++) {
                 temp = tmp[i];
@@ -203,65 +200,6 @@ public class Main {
             System.out.println();
         }
     }
-
-    public static void largest_prime(){
-        if(isChar){
-            System.out.println("no prime num ");
-            return;
-        }
-        Vector<Integer> vect = new Vector();
-        for(int i=0;i<intArr.length;i++)
-        {
-         int temp=intArr[i];
-         boolean flage=true;
-         if(temp==1)
-             continue;
-         if(temp==2)
-         {    vect.add(temp);
-              continue; }
-           for(int j=2;j<temp;j++)
-           {   
-               if(temp%j==0)
-               {      flage=false;  }
-           }
-           if(flage){
-           vect.add(temp);
-           }
-        }
-       sort(vect);
-              if(vect.size()==0){
-      System.out.println("no prim /n");
-                  return;
-              }
-        System.out.println("the largest prime num "+vect.get(vect.size()-1));
-
-}
-    public static void reverse()
-    {
-       if(isChar)
-       {
-           char temp;
-    for(int i = 0; i < charArr.length/2; i++)
-{
-    temp =charArr[i];
-    charArr[i] =charArr[charArr.length - i - 1];
-    charArr[charArr.length- i - 1] = temp;}
-      System.out.println("the out put is");
-        for(int j=0;j<charArr.length;j++){
-
-            System.out.println(charArr[j]);}}
-       else
-       {     int temp;
-    for(int i = 0; i < intArr.length/2; i++)
-{
-    temp =intArr[i];
-    intArr[i] =intArr[intArr.length - i - 1];
-    intArr[intArr.length- i - 1] = temp;}
-      System.out.println("the out put is");
-        for(int j=0;j<intArr.length;j++){
-
-            System.out.println(intArr[j]);}} }
-
 
 
     public static void FindUnique() {
@@ -301,18 +239,16 @@ public class Main {
 
     private static void Maximum3Numbers() {
         if (isChar) {
-            char[] tmp = new char[size];
-            for (int i = 0; i < size; i++)
-                tmp[i] = charArr[i];
+            char[] tmp;
+            tmp = Arrays.copyOf(charArr, size);
             Arrays.sort(tmp);
             System.out.println("Maximum 3 characters are: ");
             for (int i = size - 1; i > size - 4 && i >= 0; i--)
                 System.out.print(tmp[i] + " ");
             System.out.println();
         } else {
-            int[] tmp = new int[size];
-            for (int i = 0; i < size; i++)
-                tmp[i] = intArr[i];
+            int[] tmp;
+            tmp = Arrays.copyOf(intArr, size);
             Arrays.sort(tmp);
             System.out.println("Maximum 3 Numbers are: ");
             for (int i = size - 1; i > size - 4 && i >= 0; i--)
@@ -323,18 +259,16 @@ public class Main {
 
     private static void getMin3Numbers() {
         if (isChar) {
-            char[] tmp = new char[size];
-            for (int i = 0; i < size; i++)
-                tmp[i] = charArr[i];
+            char[] tmp ;
+            tmp = Arrays.copyOf(charArr, size);
             Arrays.sort(tmp);
             System.out.print("Minimum 3 characters are: ");
             for (int i = 0; i < 3 && i < size; i++)
                 System.out.print(tmp[i] + " ");
             System.out.println();
         } else {
-            int[] tmp = new int[size];
-            for (int i = 0; i < size; i++)
-                tmp[i] = intArr[i];
+            int[] tmp;
+            tmp = Arrays.copyOf(intArr, size);
             Arrays.sort(tmp);
             System.out.print("Minimum 3 numbers are: ");
             for (int i = 0; i < 3 && i < size; i++)
@@ -344,13 +278,12 @@ public class Main {
     }
 
     private static void returnPrime() {
-        int arr[] = new int[size];
+        int[] arr;
         if (isChar) {
             System.out.println("Error, this Function run on integers only");
             return;
         } else {
-            for (int i = 0; i < size; i++)
-                arr[i] = intArr[i];
+            arr = Arrays.copyOf(intArr, size);
         }
         System.out.print("Prime Numbers:");
         boolean flage;
@@ -367,13 +300,12 @@ public class Main {
     }
 
     public static void zeroIfLessThanZero() {
-        int arr[] = new int[size];
+        int[] arr;
         if (isChar) {
             System.out.println("Error, this Function run on integers only");
             return;
         } else {
-            for (int i = 0; i < size; i++)
-                arr[i] = intArr[i];
+            arr = Arrays.copyOf(intArr, size);
         }
         System.out.print("Zero if less than zero : { ");
         for (int i = 0; i < arr.length; i++) {
@@ -406,155 +338,155 @@ public class Main {
         Vector<Integer> vect = new Vector();
         for(int i=0;i<intArr.length;i++)
         {
-         int temp=intArr[i];
-         boolean flage=true;
-         if(temp==1)
-             continue;
-         if(temp==2)
-         {    vect.add(temp);
-              continue; }
-           for(int j=2;j<temp;j++)
-           {   
-               if(temp%j==0)
-               {      flage=false;  }
-           }
-           if(flage){
-           vect.add(temp);
-           }
+            int temp=intArr[i];
+            boolean flage=true;
+            if(temp==1)
+                continue;
+            if(temp==2)
+            {    vect.add(temp);
+                continue; }
+            for(int j=2;j<temp;j++)
+            {
+                if(temp%j==0)
+                {      flage=false;  }
+            }
+            if(flage){
+                vect.add(temp);
+            }
         }
-       sort(vect);
-              if(vect.size()==0){
-      System.out.println("no prim /n");
-                  return;
-              }
+        sort(vect);
+        if(vect.size()==0){
+            System.out.println("no prim /n");
+            return;
+        }
         System.out.println("the largest prime num "+vect.get(vect.size()-1));
 
+    }
+
+
+
+
+
+
+
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            try {
+                printMenu();
+                int choice = in.nextInt();
+                if (choice == 19) break;
+
+                System.out.println("Enter The number of the input type:\n1- Character\n2- Integer");
+                int type = in.nextInt();
+                if (type == 1) {
+                    isChar = true;
+                } else {
+                    isChar = false;
+                }
+                System.out.print("Enter The Size of the Array: ");
+                size = in.nextInt();
+                System.out.println("Enter " + size + " Elements of the array");
+                if (isChar) {
+                    charArr = new char[size];
+                    for (int i = 0; i < size; i++) {
+                        charArr[i] = in.next().charAt(0);
+                    }
+                } else {
+                    intArr = new int[size];
+                    for (int i = 0; i < size; i++) {
+                        intArr[i] = in.nextInt();
+                    }
+                }
+
+                switch (choice) {
+                    case 1:
+                        Most_repeated_value();
+                        break;
+                    case 4:
+                        largest_prime();
+                        break;
+                    case 5:
+                        smallestPrime();
+                        break;
+
+                    case 7:
+                        if (check_sort()) {
+                            System.out.println("check sort: Array is sorted");
+                        } else
+                        if (isChar) {
+                            System.out.println("---------");
+                        } else {
+                            System.out.println("check sort: Array is not sorted");
+                        }
+                    case 9:
+                        reverse();
+                        break;
+                    case 11:
+                        FindUnique();
+                        break;
+                    case 12:
+                        Maximum3Numbers();
+                        break;
+                    case 13:
+                        getMin3Numbers();
+                        break;
+                    case 14:
+                        Get_average();
+                        break;
+                    case 16:
+                        returnPrime();
+                        break;
+                    case 17:
+                        zeroIfLessThanZero();
+                        break;
+                    case 18: // Execute All
+                        Most_repeated_value();//1
+                        largest_prime();//4
+                        smallestPrime();//5
+
+
+                        if (check_sort())//7
+                            System.out.println("check sort: Array is sorted");
+                        else
+                        if(isChar)
+                            System.out.println("--------");
+                        else
+                            System.out.println("check sort: Array is not sorted");    // 7
+
+
+
+                        reverse();//9
+                        FindUnique();//11
+                        Maximum3Numbers();//12
+                        getMin3Numbers();//13
+                        Get_average();//14
+                        returnPrime();//16
+                        zeroIfLessThanZero(); //17
+
+
+
+
+
+
+
+
+
+
+
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a valid input.");
+                break;
+            }
+        }
+
+
+    }
 }
-
-	
-	
-	
-		
-		
-		
-		
-		
-		 public static void main(String[] args) {
-		        Scanner in = new Scanner(System.in);
-		        while (true) {
-		            try {
-		                printMenu();
-		                int choice = in.nextInt();
-		                if (choice == 19) break;
-
-		                System.out.println("Enter The number of the input type:\n1- Character\n2- Integer");
-		                int type = in.nextInt();
-		                if (type == 1) {
-		                    isChar = true;
-		                } else {
-		                    isChar = false;
-		                }
-		                System.out.print("Enter The Size of the Array: ");
-		                size = in.nextInt();
-		                System.out.println("Enter " + size + " Elements of the array");
-		                if (isChar) {
-		                    charArr = new char[size];
-		                    for (int i = 0; i < size; i++) {
-		                        charArr[i] = in.next().charAt(0);
-		                    }
-		                } else {
-		                    intArr = new int[size];
-		                    for (int i = 0; i < size; i++) {
-		                        intArr[i] = in.nextInt();
-		                    }
-		                }
-
-		                switch (choice) {
-		                case 1:
-		                	Most_repeated_value();
-		                	break;
-		                    case 4:
-		                        largest_prime();
-		                        break;
-		                    case 5:
-		                        smallestPrime();
-		                        break;
-		                        
-		                    case 7:
-		                        if (check_sort()) {
-		                            System.out.println("check sort: Array is sorted");
-		                        } else 
-		                            if (isChar) {
-		                            System.out.println("---------");
-		                        } else {
-		                            System.out.println("check sort: Array is not sorted");
-		                        }
-		                    case 9:
-		                        reverse();
-		                        break;
-		                    case 11:
-		                        FindUnique();
-		                        break;
-		                    case 12:
-		                        Maximum3Numbers();
-		                        break;
-		                    case 13:
-		                        getMin3Numbers();
-		                        break;
-		                    case 14:
-		                        Get_average();
-		                        break;
-		                    case 16:
-		                        returnPrime();
-		                        break;
-		                    case 17:
-		                        zeroIfLessThanZero();
-		                        break;
-		                    case 18: // Execute All
-		                    	Most_repeated_value();//1
-		                        largest_prime();//4
-		                        smallestPrime();//5
-		                        
-		                        
-		                        if (check_sort()) 
-		                            System.out.println("check sort: Array is sorted");
-		                         else
-		                            if(isChar)
-		                                System.out.println("--------");
-		                        else
-		                            System.out.println("check sort: Array is not sorted");    // 7
-		                        
-		                        
-		                        
-		                        reverse();//9
-		                        FindUnique();//11
-		                        Maximum3Numbers();//12
-		                        getMin3Numbers();//13
-		                        Get_average();//14
-		                        returnPrime();//16
-		                        zeroIfLessThanZero(); //17
-		                        
-		                        
-		                        
-		                        
-		                        
-		                        
-		                        
-		                        
-		                        
-		                        
-		                        
-		                        break;
-		                }
-		            } catch (InputMismatchException e) {
-		                System.out.println("Please enter a valid input.");
-		                break;
-		            }
-		        }
-
-
-		    }
-		}
 	
 		
 	
